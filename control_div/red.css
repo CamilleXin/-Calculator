@@ -1,0 +1,12 @@
+body {
+    background: red;
+}
+
+#nav {
+    background: rebeccapurple;
+    border-color: #fff;
+}
+
+#nav li {
+    border-color: #fff;
+}

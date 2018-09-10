@@ -1,0 +1,12 @@
+body {
+    background: black;
+}
+
+#nav {
+    background: cornflowerblue;
+    border-color: #fff;
+}
+
+#nav li {
+    border-color: #fff;
+}
