@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #outer {
+            width: 330px;
+            height: 100px;
+            margin: 10px auto;
+        }
+
+        #outer div {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            background: black;
+        }
+    </style>
+    <script type="application/javascript">
+        function changeColor() {
+            var oDiv = document.getElementById('outer').getElementsByTagName('div');
+            for (var i = 0; i < oDiv.length; i++) {
+                oDiv[i].style.background = 'red'
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<input type="button" value="点击将三个div块变成红色" onclick="changeColor()">
+<div id="outer">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
