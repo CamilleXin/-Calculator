@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            color: #999;
+            font: 12px/1.5 Tahoma;
+        }
+
+        #outer {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #outer input {
+            padding: 3px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            width: 220px;
+            margin-right: 10px;
+        }
+
+        .sum {
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+    <script type="application/javascript">
+        function sum() {
+            var oDiv = document.getElementById('outer');
+            var oInput = oDiv.getElementsByTagName('input')[0].value.split(',');
+            var oStrong  = document.getElementsByTagName("strong")[0];
+            var sum = 0;
+            for (var i = 0; i < oInput.length; i++) {
+                sum = sum + parseInt(oInput[i])
+            }
+            oStrong.innerHTML = sum
+
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <input type="text">
+    <button onclick="sum()">求和</button>
+    <strong class="sum"></strong>
+</div>
+</body>
+</html>
