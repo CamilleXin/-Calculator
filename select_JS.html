@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .highlight {
+            background: yellow;
+        }
+    </style>
+    <script type="application/javascript">
+        window.onload = function () {
+            var Oinput = document.getElementById('input1');
+            var Otable = document.getElementById('table1');
+            var tBody = Otable.getElementsByTagName('tbody')[0];
+            Oinput.onblur = function () {
+                var searchText = Oinput.value.trim().toLowerCase().split();
+                // console.log(Otable.tBodies[0].rows)
+                for (var i = 1; i < Otable.tBodies[0].rows.length; i++) {
+                    for (var j = 0; j < Otable.rows.item(0).cells.length; j++) {
+                        var tableRow = tBody.rows[i].cells[j].innerHTML.toLowerCase();
+                        console.log(tableRow);
+                        for (var k = 0; k < searchText.length; k++) {
+                            console.log(tBody.rows[i])
+                            if (tableRow.search(searchText[k]) !== -1)//多个关键字搜索
+                            {
+                                tBody.rows[i].style.background = "yellow";
+                            }
+                            else {
+
+                            }
+
+                        }
+                    }
+
+                }
+            };
+
+        }
+    </script>
+</head>
+<body>
+<input id="input1" type="text" placeholder="搜索">
+
+<table id="table1" border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>sex</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>abcd</td>
+        <td>12</td>
+        <td>f</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>b</td>
+        <td>5</td>
+        <td>m</td>
+    </tr>
+
+</table>
+</body>
+</html>
