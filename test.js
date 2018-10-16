@@ -17,20 +17,22 @@ let testData = [
     }
 ];
 
-let keywords = "311 Tornado";
+let keywords = "311 To45rnado";
 
-let searchText = keywords.trim().toLowerCase().split(/\s+/);
-testData.forEach(function (value, index) {
+let searchText = keywords.trim().split(/\s+/);
+let deleteList=[];
+testData.forEach(function (value,index) {
     let singleline = '';
     for (let i in value) {
         singleline += value[i]
     }
     for (var j = 0; j < searchText.length; j++) {
-        if (singleline.indexOf(searchText[j]) !== -1) {
-            console.log(singleline)
+        if (singleline.indexOf(searchText[j]) === -1) {
+           deleteList.push(index)
         }
     }
 });
+// console.log(deleteList);
 
 
-
+testData.splice()
