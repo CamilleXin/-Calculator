@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link  rel="stylesheet" href="//unpkg.com/element-ui@2.2.2/lib/theme-chalk/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui@2.4.10/lib/index.js"></script>
+
 </head>
 <style>
     .tooltip-box {
@@ -13,13 +19,35 @@
         color: #3a3a3a;
         padding: 10px;
         font-size: 12px;
-        width: 200px;
-        height: 90px;
+        width: 150px;
+        height: 60px;
         overflow: auto;
-
     }
 </style>
 <body>
-
+<div id="app">
+    <el-table
+            :data="tableData"
+            border
+            style="width: 100%"
+            @cell-mouse-enter="enterCell"
+            @cell-mouse-leave="leaveCell">
+        <el-table-column
+                prop="date"
+                label="日期"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="name"
+                label="姓名"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="address"
+                label="地址">
+        </el-table-column>
+    </el-table>
+</div>
 </body>
+<script src="tooTip.js"></script>
 </html>
